@@ -1,6 +1,5 @@
 <template>
   <div class="about">
-   
-    <img src="aboutme.jpg" alt="cv">
+    <h1>This is an about page</h1>
   </div>
 </template>
