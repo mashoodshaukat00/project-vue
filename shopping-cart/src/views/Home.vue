@@ -1,14 +1,15 @@
 <template>
   <section>
     <nav class="nav">
-      <h2 class="nav__header">
+      
+        <h2 class="nav__header">
         Products
       </h2>
       <div class="nav__cart">
-        <button @click="showCart = !showCart">
-          <i class="fas fa-shopping-cart">
-            Open Cart
-          </i>
+        <button @click="showCart = !showCart"
+        @dblclick="openCart"
+        >
+          <i class="fas fa-shopping-cart"></i>
         </button>
         <span class="total-quantity">{{ totalQuantity }}</span>
         <div
@@ -25,6 +26,8 @@
           </ul>
         </div>
       </div>
+      
+      
     </nav>
     <Products
       :products="products"
@@ -88,6 +91,15 @@ export default {
           break
         }
       }
+    },
+    async openCart(){
+      this.$router.push({
+        name:'Cart',
+       params: {cartdata: JSON.stringify(
+         this.products.filter(product => product.quantity > 0)
+       )
+
+       }})
     },
     async subtractFromCart (id) {
         console.log(id)

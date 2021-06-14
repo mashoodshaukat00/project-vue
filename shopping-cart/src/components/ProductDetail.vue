@@ -80,7 +80,7 @@
         class="product-price"
         style="display:inline;"
       >
-        <span>{{ productdata.price }}$</span>
+        <span>${{ productdata.price }}</span>
         <a
           href="#"
           class="cart-btn"
@@ -125,26 +125,35 @@ html, body {
 .left-column {
   width: 65%;
   position: relative;
+  margin-top: -40px;
 }
 
 .right-column {
   width: 35%;
-  margin-top: 60px;
+  margin-top: 100px;
 }
 
 
 /* Left Column */
 .left-column img {
-  width: 100%;
-  position: absolute;
+  width: 65%;
+  height: 80%;
+  margin-left: 160px;
+  /* position: absolute;
   left: 0;
-  top: 0;
+  top: 136px; */
+  transform: translate(-231px, 95px);
   opacity: 0;
   transition: all 0.3s ease;
 }
 
 .left-column img.active {
   opacity: 1;
+}
+.left-column img:hover{
+  width: 75%;
+  height: 90%;
+  transition: all 0.3s ease;
 }
 
 
@@ -164,7 +173,7 @@ html, body {
 }
 .product-description h1 {
   font-weight: 300;
-  font-size: 52px;
+  font-size: 35px;
   color: #43484D;
   letter-spacing: -2px;
 }
@@ -293,7 +302,7 @@ html, body {
 
 .cart-btn {
   display: inline-block;
-  background-color: #7DC855;
+   background-color: rgb(31, 199, 212);
   border-radius: 6px;
   font-size: 16px;
   color: #FFFFFF;
@@ -302,7 +311,7 @@ html, body {
   transition: all .5s;
 }
 .cart-btn:hover {
-  background-color: #64af3d;
+  opacity: 0.6;
 }
 
 /* Responsive */
