@@ -1,9 +1,11 @@
 <template>
-  <!-- // <div class="container"></div>   -->
-<section class="products">
-    <div class="container" v-if="showproducts" >
+  <div 
+  class="container">
+    <section class="products">
+    <div class="body-container" v-if="showproducts" >
     <div v-for="product in products" :key="product.id" class="product">
-        <Product :productdata="product" 
+        <Product :productdata="product"
+        
         @add-product="$emit('add-product', $event)"
         @subtract-product ="$emit('subtract-product', $event)"
         @display-product-details="switchComponents" /> 
@@ -14,6 +16,8 @@
     </div>
  
   </section>  
+    </div>  
+
 </template>
 
 <script>
@@ -30,12 +34,10 @@ switchComponents(id)
    this.showproducts=!this.showproducts;
    this.selectedproduct = this.products.filter(x=>x.id===id)[0];
   // console.log(this.selectedproduct);
-   
-
 }, 
 },
 props: {
-    products : Array
+    products : Array,
 },
 components:{
     Product,
@@ -44,15 +46,22 @@ components:{
 data() {
     return {
       showproducts: true,
-      selectedproduct:{}     
+      selectedproduct:{},
+      hoverd: false,     
     }
   },
 emits:['add-product','subtract-product']
 }
 </script>
 
-<style scoped>
-.container {
+<style >
+.container{
+  width: 80%;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.body-container {
+  width: 100%;
   display: grid; 
   grid-template-columns: 1fr 1fr 1fr; 
   grid-template-rows: 1fr 1fr 1fr; 

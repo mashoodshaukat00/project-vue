@@ -31,10 +31,20 @@
   a {
     font-weight: bold;
     color: #2c3e50;
+    font-size: 17px;
+    margin-left: 30px;
+    text-decoration: none;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: rgb(31, 199, 212);
     }
+    
+  }
+  :hover{
+    text-decoration: underline;
+    transition: all 0.4s ease;
+    font-size: 25px;
+
   }
 }
 * {
@@ -42,6 +52,9 @@
   font-weight: normal;
   margin: 0;
   padding: 0;
+}
+body{
+  background-color: white;
 }
 
 html {
@@ -51,18 +64,24 @@ html {
 // https://sass-lang.com/documentation/style-rules/parent-selector
 .nav {
   align-items: center;
-  background: rgb(161, 115, 236);
+  background-color: rgb(31, 199, 212);
   color: white;
   display: flex;
   justify-content: space-between;
-  padding: 2rem;
+  padding: 1.5rem;
 
     &__header {
       font-size: 2.5rem;
+     margin-left: 11.3%;
+     cursor: pointer;
+     //text-shadow: -10px 10px rgb(120, 128, 131);
   }
 
   &__cart {
     position: relative;
+    margin-right: 11.3%;
+   
+    
 
     button {
       background: none;
@@ -73,11 +92,12 @@ html {
 
     i {
       font-size: 2rem;
+      color: rgb(23, 112, 119);
     }
 
     .total-quantity {
       align-items: center;
-      background: lightblue;
+      background: red;
       border-radius: 50%;
       display: flex;
       font-weight: bold;
@@ -123,12 +143,13 @@ html {
   .product {
     border: 1px solid lightgray;
     border-radius: 10px;
-    margin: 2rem;
+    margin: 3rem;
     padding: 1rem;
 
     &__header {
-      font-size: 2rem;
+      font-size: 1.5rem;
       text-align: center;
+      
     }
 
     &__image {
@@ -151,7 +172,7 @@ html {
   text-align: center;
 
   &__button {
-    background: lightblue;
+    background-color: rgb(31, 199, 212);
     border: 0;
     color: white;
     cursor: pointer;
@@ -159,6 +180,7 @@ html {
     font-weight: bold;
     height: 2.5rem;
     width: 2.5rem;
+    border-radius: 5px;
   }
 
   &__quantity {

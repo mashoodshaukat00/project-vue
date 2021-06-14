@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import Cart from '../views/Cart.vue'
 
 const routes = [
   {
@@ -18,8 +19,8 @@ const routes = [
   {
     path: '/cart',
     name: 'Cart',
-    component: () =>
-      import(/* webpackChunkName: "about" */ '../views/Cart.vue')
+   props: true,
+   component: Cart
   }
 ]
 
