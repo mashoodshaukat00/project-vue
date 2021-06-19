@@ -114,7 +114,8 @@ export default {
         async fetchProducts()
         {
          // const res= await fetch('https://random-data-api.com/api/coffee/random_coffee?size=6');
-         const res = await fetch('https://fakestoreapi.com/products/')
+         //https://fakestoreapi.com/products/
+          const res = await fetch('http://localhost:3000/products')
           const data = await res.json();
           return data;
         },
